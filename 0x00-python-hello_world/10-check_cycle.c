@@ -7,20 +7,20 @@
  */
 int check_cycle(listint_t *li)
 {
-	listint_t *curre, *chec;
+	listint_t *curr, *ch;
 
 	if (li == NULL || li->next == NULL)
 		return (0);
-	curre = li;
-	chec = curre->next;
+	curr = li;
+	ch = curr->next;
 
-	while (curre != NULL && chec->next != NULL
-		&& chec->next->next != NULL)
+	while (curr != NULL && ch->next != NULL
+		&& ch->next->next != NULL)
 	{
-		if (curre == ch)
+		if (curr == ch)
 			return (1);
-		curre = curre->next;
-		chec = chec->next->next;
+		curr = curr->next;
+		ch = ch->next->next;
 	}
 	return (0);
 }
