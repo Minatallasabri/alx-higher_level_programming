@@ -22,4 +22,8 @@ def add_integer(a, b=98):
             b = int(b)
         else:
             raise TypeError("b must be an integer")
+<<<<<<< HEAD
     return (a + b)
+=======
+    return (a + b)
+>>>>>>> 62e30be62bf6ad61de61418b394e6fb60b8637ce
