@@ -1,0 +1,3 @@
+task number 0x09 .... 
+
+Is :  Python - Everything is object
