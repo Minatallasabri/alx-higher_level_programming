@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Initalize a function"""
+"""Function"""
 
 
-def is_same_class(obj, a_class):
-    """if object is an istance
+def is_kind_of_class(obj, a_class):
+    """is the object is an instance
 
     Args:
         obj: the object
@@ -11,6 +11,6 @@ def is_same_class(obj, a_class):
     Returns:
         True or False
     """
-    if (type(obj) == a_class):
+    if isinstance(obj, a_class):
         return True
     return False
