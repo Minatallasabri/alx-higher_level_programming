@@ -1,16 +1,25 @@
 #!/usr/bin/python3
-"""Module for find_peak function"""
+""" Finds Peak values """
 
 
 def find_peak(list_of_integers):
-    """A function that finds a peak in a list of unsorted integers"""
-    prev = 0
-    for idx, num in enumerate(list_of_integers):
-        if idx:
-            prev = list_of_integers[idx - 1]
-        if idx < len(list_of_integers) - 1:
-            next = list_of_integers[idx + 1]
-        else:
-            next = 0
-        if num >= prev and num >= next:
-            return num
+    """Find the peak"""
+    list_l = len(list_of_integers)
+    if list_l is 0:
+        return None
+    peak = binary_search(list_of_integers, 0, list_l - 1)
+    return list_of_integers[peak]
+
+
+""" binary search algorithim """
+
+
+def binary_search(a, lo, hi):
+    """Recursive binary search of the peak"""
+    if lo >= hi:
+        return lo
+    mid = ((hi - lo) // 2) + lo
+    if a[mid] > a[mid + 1]:
+        return binary_search(a, lo, mid)
+    else:
+        return binary_search(a, mid + 1, hi)
